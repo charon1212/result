@@ -24,6 +24,19 @@ const returnVoidResult = (flag: boolean): Result<void, number> => {
 ## interface
 
 ```ts
+// is
+const result: Result<string, number> = {} as any;
+if (result.isOk) {
+  result.ok; // string
+} else {
+  result.er; // number
+}
+if (result.isEr) {
+  result.er; // number
+} else {
+  result.ok; // string
+}
+
 // * unwrap
 ok('success').unwrap(); // 'success'
 er('error').unwrap(); // throw 'error'
